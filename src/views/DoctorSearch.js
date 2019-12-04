@@ -27,6 +27,48 @@ const Searchinfo = styled.section`
 `;
 
 class DoctorSearch extends Component {
+  state = { 
+    name: '',
+  }
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+    };
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.onCreate(this.state);
+    this.setState({
+      name: '',
+    })
+  }
+
+  toggleinfo = () => {
+    const { isOpen } = this.state;
+    this.setState({
+      isOpen: !isOpen,
+    });
+  };
+
+  search = () => {
+    if(this.state.name == "이유빈"){
+      const { isOpen } = this.state;
+      this.setState({
+      isOpen: !isOpen,
+    });
+    }
+    else{
+      alert("환자 정보가 존재하지 않습니다.")
+    }
+  };
   render() {
     const { isOpen } = this.state;
     let displayOption = 'none';
