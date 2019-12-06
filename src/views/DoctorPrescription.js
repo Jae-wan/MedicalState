@@ -1,5 +1,31 @@
 import React, { Component } from 'react';
 import Link from './common/Link';
+import styled from 'styled-components';
+
+const PopUp = styled.section`
+  background-color: rgba(0,0,0,0.4);
+  width: 100%;
+  min-height: 200vmax;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: ${p => p.displayOption};
+`;
+
+const PopUpInput = styled.section`
+  background-color: #fff;
+  width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 100px;
+  text-align: left;
+  & label {
+    width: 2000px;
+    display: inline-block;
+    text-align:left;
+  }
+`;
+
 
 class DoctorPrescription extends Component {
   constructor(props){
@@ -10,6 +36,7 @@ class DoctorPrescription extends Component {
       age: '',
       medicine: '',
       medicineNumber: 0,
+      isOpen: false,
     }
   }
 
@@ -26,23 +53,30 @@ class DoctorPrescription extends Component {
   };
 
   handleMinus = () => {
-    this.setState({
-      medicineNumber: this.state.medicineNumber - 1
-    })
+    if (this.state.medicineNumber-1 < 0 ) {
+      alert('약의 개수는 0 이상이어야 합니다.')
+    }
+    else {
+      this.setState({
+        medicineNumber: this.state.medicineNumber - 1
+      })
+    }
   };
 
-  handleMinusError = () => {
+  togglePopUp = () => {
+    const { isOpen } = this.state;
     this.setState({
-      medicineNumber: this.state.medicineNumber + 1
-    })
-    alert('약의 개수는 0 이상이어야 합니다.')
-  }
+      isOpen: !isOpen,
+    });
+  };
 
   render() {
-    const { medicineNumber } = this.state;
-
-    if (medicineNumber < 0) {
-      this.handleMinusError;
+    const { isOpen } = this.state;
+    
+    let displayOption = 'none';
+    
+    if (isOpen) {
+      displayOption = 'block';
     }
 
     return (
@@ -80,15 +114,31 @@ class DoctorPrescription extends Component {
               value={this.state.medicine}
               onChange={this.handleChange}
               name='medicine'
-            />
+            /> : {this.state.medicineNumber}
           </form>
 
-          <hr/>
-          <tag> 환자이름 : "{this.state.patient}" | 성별 : {this.state.sex} | 나이 : {this.state.age} </tag> <br/>
-          <tag> 처방할 약</tag> <br/>
-          <tag> {this.state.medicine} : {this.state.medicineNumber} </tag>
           <button onClick={this.handlePlus}> 증가 </button>
           <button onClick={this.handleMinus}> 감소 </button>
+
+          <button onClick={this.togglePopUp}> 처방전 확인하기</button>
+
+          <article>
+            <PopUp displayOption={displayOption}>
+              <PopUpInput>
+                <section>
+                  <label> 환자 이름 : "{this.state.patient}"</label>
+                  <label> 성별 : "{this.state.sex}" </label>
+                  <label> 나이 : "{this.state.age}" </label>
+                  </section>
+                  <hr />
+                 <section>
+                  <label> 처방할 약 : "{this.state.medicine}" : {this.state.medicineNumber} 개</label>
+                  <br />
+                  <button onClick={this.togglePopUp}> 끄기 </button>
+                </section>
+                </PopUpInput>
+            </PopUp>
+          </article>
         </main>
         );
   };

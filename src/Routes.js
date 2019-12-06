@@ -5,6 +5,7 @@ import DoctorPrescription from './views/DoctorPrescription';
 import DoctorSearch from './views/DoctorSearch';
 import DoctorSignUp from './views/DoctorSignUp';
 
+
 const routes = [
   {
     id: 'main',
