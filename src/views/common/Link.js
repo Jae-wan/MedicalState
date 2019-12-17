@@ -6,6 +6,7 @@ class Link extends Component {
             <main>
                 <section>
                     <article>
+                        <h1> 의사 관련 Page</h1>
                         <nav>
                             <li><a href="/doctor/login"> 로그인 [ ! 예은 ! ] </a></li>
 
@@ -18,6 +19,18 @@ class Link extends Component {
                             <li><a href="/doctor/prescription"> 처방전 [ ! 재완 ! ] </a></li>
 
                         </nav>
+                        
+                        <hr />
+
+                        <h1> 약사 관련 Page </h1>
+                            <nav>
+                                <li><a href="/pharmacist/qrscan"> [!] QR스캔 및 환자정보 출력 Page [!] </a></li>
+                                <li><a href="/pharmacist/medicinecompare"> [!] 약 성분 비교 Page [!] </a></li>
+                                <li><a href="/pharmacist/medicineguide">[!] 복약지도 Page [!]</a></li>
+                            </nav>
+                        
+                        <hr/>
+                        
                     </article>
                 </section>
             </main>

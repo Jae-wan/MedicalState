@@ -26,7 +26,6 @@ const PopUpInput = styled.section`
   }
 `;
 
-
 class DoctorPrescription extends Component {
   constructor(props){
     super(props)
