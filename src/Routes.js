@@ -8,6 +8,7 @@ import DoctorSignUp from './views/DoctorSignUp';
 import QRScan from './views/DrugStore/QRScan';
 import MedicineCompare from './views/DrugStore/MedicineCompare';
 import MedicineGuide from './views/DrugStore/MedicineGuide';
+import Information from './views/DrugStore/Information';
 
 const routes = [
   {
@@ -64,6 +65,12 @@ const routes = [
     exact: true,
     component: MedicineGuide,
   },
+  {
+    id: 'information',
+    path: '/pharmacist/information',
+    exact: true,
+    component: Information,
+  }
 ];
 
 export default routes;
