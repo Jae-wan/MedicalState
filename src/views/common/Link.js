@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import * as queryParser from 'query-string';
 
 class Link extends Component {
     render(){
+        const query = queryParser.parse(window.location.search);
+        console.log(query);
         return (
             <main>
                 <section>
-                    <article>
+                    <article>                    
                         <h1> 의사 관련 Page</h1>
                         <nav>
                             <li><a href="/doctor/login"> 로그인 [ ! 예은 ! ] </a></li>
@@ -30,6 +33,19 @@ class Link extends Component {
                             </nav>
                         
                         <hr/>
+
+                        <h1> 환자 관련 Page </h1>
+                            <nav>
+
+                            </nav>
+
+                        <hr />
+
+                        <h1> Test Pages </h1>
+                            <nav>
+                                <li><a href="/test/qrreader"> [!] QR Reader Test Page [!] </a></li>
+                                <li><a href="/test/comparetest"> [!] Compare Test Page [!] </a></li>
+                            </nav>
                         
                     </article>
                 </section>
