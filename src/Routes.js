@@ -8,6 +8,7 @@ import DoctorSignUp from './views/DoctorSignUp';
 import QRScan from './views/DrugStore/QRScan';
 import MedicineCompare from './views/DrugStore/MedicineCompare';
 import MedicineGuide from './views/DrugStore/MedicineGuide';
+import Information from './views/DrugStore/Information';
 
 
 
@@ -70,6 +71,7 @@ const routes = [
     component: MedicineGuide,
   },
   {
+<<<<<<< HEAD
     id: 'QRReader',
     path: '/test/qrreader',
     exact: true,
@@ -81,6 +83,13 @@ const routes = [
     exact: true,
     component: CompareTest,
   },
+=======
+    id: 'information',
+    path: '/pharmacist/information',
+    exact: true,
+    component: Information,
+  }
+>>>>>>> 2e94860980b9fcfb9ba4acaf9adaa482b01692d1
 ];
 
 export default routes;
