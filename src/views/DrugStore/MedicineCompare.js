@@ -1,11 +1,60 @@
-//약 성분 비교
-
 import React, {Component} from 'react';
 import Link from '../common/Link';
 import styled from 'styled-components';
 import NewMedicineCompareProps from '../common/NewMedicineCompareProps';
 import OverMedicineCompareProps from '../common/OverMedicineCompareProps';
 import OverItemMedicine from '../common/OverItemMedicine';
+
+const CompareBox = styled.section`
+    position: absolute;
+    width: 60%;
+    margin: 7%;
+    border: 5px solid black;
+    padding: 0% 0% 1% 0%;
+    
+`;
+
+const CompareBoxNew = styled.section`
+    position: relative;
+    float: left;
+    width: 47%;
+    border-right-width: 3px;
+    border-right-style: solid;
+    border-right-color: black;
+    padding: 1%;
+    text-align: center;
+`;
+
+const CompareBoxOld = styled.section`
+    position: relative;
+    float right;
+    width: 47%;
+    padding: 1%;
+    text-align: center;
+`;
+
+const CompareBoxBottom = styled.section`
+    position: relative;
+    width: 98%;
+    float left;
+    border-top-style: double;
+    border-top-width: 5px;
+    border-top-color: black;
+    padding: 1%;
+`;
+
+const CompareHead = styled.section`
+    font-size: 20px;
+    font-weight: bold;
+    color: violet;
+`;
+
+const CompareOverHead = styled.section`
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+`;
 
 class MedicineCompare extends Component {
     constructor(props){
@@ -68,26 +117,16 @@ class MedicineCompare extends Component {
             ], 
             MainItems: [],
             OverItems: [],
-
             };
         }
 
     render(){
         const {
-
             MainItems,
             OverItems,
             MainMedicine,
             OverMedicine,
                             } = this.state;
-
-        let Blue = {
-            color: 'blue',
-        }
-
-        let Red = {
-            color: 'red',
-        }
 
         for (let i = 0 ; i<this.state.MainMedicine.length ; i++) {
             for (let j = 0 ; j<this.state.OverMedicine.length ; j ++) {
@@ -100,36 +139,36 @@ class MedicineCompare extends Component {
         return(
             <main className = "MedicineCompare">
                 <Link />
-                <article>
+
+                <CompareBox>    <article>
                     
-                    <section>
-                        <p> 신규 처방 약</p>
+                    <CompareBoxNew> <section>
+                        <CompareHead>   <p> 신규 처방 약</p>   </CompareHead>
                     {this.state.MainMedicine.map(item => <NewMedicineCompareProps
                         name={item.name} 
                         eff={item.eff}
                         />)}
-                    </section>
+                    </section>  </CompareBoxNew>
 
-                <hr/>
-
-                    <section>
-                        <p> 기존 처방 약 </p>
+                    <CompareBoxOld>    <section>
+                        <CompareHead>   <p> 기존 처방 약 </p>   </CompareHead>
                         {this.state.OverMedicine.map(item => <OverMedicineCompareProps
                         name={item.name} 
                         eff={item.eff}
                         />)}
-                    </section>
-
-                    <section>
-                        <p> 중복 처방 약</p>
+                    </section>      </CompareBoxOld>
+                            <br/>
+                    <CompareBoxBottom>   <section>
+                        
+                        <CompareOverHead>   <p> 중복 처방 약</p>    </CompareOverHead>
                         {this.state.OverItems.map(item => <OverItemMedicine
                             name={item.name}
                             eff={item.eff}
                             MedicineNum={item.MedicineNum}
                             />)}
-                    </section>
+                    </section>  </CompareBoxBottom>
 
-                </article>
+                            </article>  </CompareBox>
 
 
                 </main>
@@ -138,4 +177,3 @@ class MedicineCompare extends Component {
     }
 
 export default MedicineCompare;
-
