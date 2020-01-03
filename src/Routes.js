@@ -1,14 +1,19 @@
 import MedicalState from './views/MedicalState';
-import DoctorAddPatientView from './views/DoctorAddPatient';
-import DoctorLogin from './views/DoctorLogin';
-import DoctorPrescription from './views/DoctorPrescription';
-import DoctorSearch from './views/DoctorSearch';
-import DoctorSignUp from './views/DoctorSignUp';
+import DoctorAddPatientView from './views/DoctorView/DoctorAddPatient';
+import DoctorLogin from './views/DoctorView/DoctorLogin';
+import DoctorPrescription from './views/DoctorView/DoctorPrescription';
+import DoctorSearch from './views/DoctorView/DoctorSearch';
+import DoctorSignUp from './views/DoctorView/DoctorSignUp';
 
-import QRScan from './views/DrugStore/QRScan';
-import MedicineCompare from './views/DrugStore/MedicineCompare';
-import MedicineGuide from './views/DrugStore/MedicineGuide';
-import Information from './views/DrugStore/Information';
+import QRScan from './views/DrugStoreView/QRScan';
+import MedicineCompare from './views/DrugStoreView/MedicineCompare';
+import MedicineGuide from './views/DrugStoreView/MedicineGuide';
+import Information from './views/DrugStoreView/Information';
+
+
+
+import QRReader from './views/TestView/QRReader';
+import CompareTest from './views/TestView/CompareTest';
 
 const routes = [
   {
@@ -19,31 +24,31 @@ const routes = [
   },
   {
     id: 'DoctorLogin',
-    path: '/doctor/login',
+    path: '/doctorview/login',
     exact: true,
     component: DoctorLogin,
   },
   {
     id: 'DoctorSignUp',
-    path: '/doctor/signup',
+    path: '/doctorview/signup',
     exact: true,
     component: DoctorSignUp,
   },
   {
     id: 'DoctorSearch',
-    path: '/doctor/search',
+    path: '/doctorview/search',
     exact: true,
     component: DoctorSearch,
   },
   {
     id: 'DoctorAddPatientView',
-    path: '/doctor/addpatientview',
+    path: '/doctorview/addpatientview',
     exact: true,
     component: DoctorAddPatientView,
   },
   {
     id: 'DoctorPrescription',
-    path: '/doctor/prescription',
+    path: '/doctorview/prescription',
     exact: true,
     component: DoctorPrescription,
   },
@@ -64,6 +69,19 @@ const routes = [
     path: '/pharmacist/medicineguide',
     exact: true,
     component: MedicineGuide,
+  },
+  {
+
+    id: 'QRReader',
+    path: '/test/qrreader',
+    exact: true,
+    component: QRReader,
+  },
+  {
+    id: 'CompareTest',
+    path: '/test/comparetest',
+    exact: true,
+    component: CompareTest,
   },
   {
     id: 'information',
