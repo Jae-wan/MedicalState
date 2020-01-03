@@ -3,13 +3,18 @@
 import React, { Component } from 'react';
 import QrReader from 'react-qr-reader';
 import QRCode from 'qrcode.react';
-// qrcode.react -> QR코드 생성하는 패키지, 사용법: <QRCode value={"주소"} />
+// qrcode.react -> QR코드 생성하는 패키지, 사용법: <QRCode value={"값"} />
 
 class QRReader extends Component {
+    state = {
+        result: ''
+    }
   
     // 이미지 스캔 결과물 (data는 주소)
     handleScan = data => {
-      console.log(data);
+      this.setState({
+        result: data
+      });
     }
 
     // 에러 처리 함수 (관상용)
@@ -25,17 +30,21 @@ class QRReader extends Component {
   render() {
     return (
       <div>
-	    <button onClick={this.openImageDialog}> Insert QRCode </button>
+
+        <QRCode value={"1234567890f"} /> <br /><br />
+
+	    <button onClick={this.openImageDialog}> Insert QRCode </button> <br /><br />
 
         <QrReader
           onError={this.handleError}
           onScan={this.handleScan}
 		  legacyMode={true}
 		  ref="reader"
-          style={{ width: '0%' }} 
+          style={{ width: '0%' }}
         />
 
-        <QRCode value={"http://naver.com/"} />
+        <h1> {this.state.result} </h1>
+
       </div>
     )
   }
