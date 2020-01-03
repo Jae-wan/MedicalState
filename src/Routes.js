@@ -9,7 +9,7 @@ import QRScan from './views/DrugStoreView/QRScan';
 import MedicineCompare from './views/DrugStoreView/MedicineCompare';
 import MedicineGuide from './views/DrugStoreView/MedicineGuide';
 import Information from './views/DrugStoreView/Information';
-
+import Local from './views/TestView/Local';
 
 
 import QRReader from './views/TestView/QRReader';
@@ -88,6 +88,12 @@ const routes = [
     path: '/pharmacist/information',
     exact: true,
     component: Information,
+  },
+  {
+    id: 'Local',
+    path: '/test/Local',
+    exact: true,
+    component: Local,
   }
 ];
 
