@@ -9,7 +9,7 @@ text-align:center; width:750px; height:370px;
 `;
 
 
-class ForDoc extends Component {
+class DoctorAddPatient extends Component {
 
   state ={
 
@@ -276,4 +276,4 @@ class ForDoc extends Component {
 
 
 
-export default ForDoc;
+export default DoctorAddPatient;

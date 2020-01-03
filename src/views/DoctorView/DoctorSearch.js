@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Link from './common/Link';
+import Link from '../common/Link';
 
 class DoctorSearch extends Component {
 

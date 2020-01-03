@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Link from './common/Link';
+import Link from '../common/Link';
 import styled from 'styled-components';
 
 const PopUp = styled.section`

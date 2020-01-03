@@ -1,7 +1,7 @@
 // 로그인 후 IDPermission에 따른 의사, 약사, 환자 판단하는 페이지.
 
 import React, { Component } from 'react';
-import Link from './common/Link';
+import Link from '../common/Link';
 import styled from 'styled-components';
 
 const LoginBox = styled.section`
