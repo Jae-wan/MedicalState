@@ -48,6 +48,7 @@ class Link extends Component {
                             <nav>
                                 <li><a href="/test/qrreader"> [!] QR Reader Test Page [!] </a></li>
                                 <li><a href="/test/comparetest"> [!] Compare Test Page [!] </a></li>
+                                <li><a href="/test/Local"> [!] LocalTest [!] </a></li>
                             </nav>
                         
                     </article>
