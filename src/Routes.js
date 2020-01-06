@@ -10,7 +10,7 @@ import MedicineCompare from './views/DrugStoreView/MedicineCompare';
 import MedicineGuide from './views/DrugStoreView/MedicineGuide';
 import Information from './views/DrugStoreView/Information';
 
-
+import PrescriptionDescription from './views/PatientView/PrescriptionDescription';
 
 import QRReader from './views/TestView/QRReader';
 import CompareTest from './views/TestView/CompareTest';
@@ -71,6 +71,18 @@ const routes = [
     component: MedicineGuide,
   },
   {
+    id: 'information',
+    path: '/pharmacist/information',
+    exact: true,
+    component: Information,
+  },
+  {
+    id: 'prescriptiondescription',
+    path: '/patientview/prescriptiondescription',
+    exact: true,
+    component: PrescriptionDescription,
+  },
+  {
 
     id: 'QRReader',
     path: '/test/qrreader',
@@ -83,12 +95,7 @@ const routes = [
     exact: true,
     component: CompareTest,
   },
-  {
-    id: 'information',
-    path: '/pharmacist/information',
-    exact: true,
-    component: Information,
-  }
+
 ];
 
 export default routes;

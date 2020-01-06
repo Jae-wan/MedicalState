@@ -16,8 +16,8 @@ const LoginBox = styled.section`
 
 class DoctorLogin extends Component {
     state={
-          ID: '',
-          Password: '',
+          UserName: '',
+          UserPassword: '',
           UserPermission: 0,
           DoctorPermission: 1,
           DrugStorePermission: 2,
@@ -49,19 +49,19 @@ class DoctorLogin extends Component {
 
     handleChange = (e) => {
       const { UserPermission } = this.state;
-      if ( this.state.ID == 'doctor' || this.state.DataBase[3].IDPermission == 1) {
+      if ( this.state.UserName == 'doctor' || this.state.DataBase[3].IDPermission == 1) {
         this.setState({
           UserPermission: 1,
           [e.target.name]: e.target.value
         });
       }
-      if ( this.state.ID == 'drugstore' || this.state.DataBase[3].IDPermission == 2) {
+      if ( this.state.UserName == 'drugstore' || this.state.DataBase[3].IDPermission == 2) {
         this.setState({
           UserPermission: 2,
           [e.target.name]: e.target.value
         });
       }
-      if ( this.state.ID == 'patient' || this.state.DataBase[3].IDPermission == 3) {
+      if ( this.state.UserName == 'patient' || this.state.DataBase[3].IDPermission == 3) {
         this.setState({
           UserPermission: 3,
           [e.target.name]: e.target.value
@@ -84,7 +84,7 @@ class DoctorLogin extends Component {
             alert('환자로 로그인 합니다.');
             }
           if( this.state.UserPermission === 0) {
-            if( this.state.ID == '' && this.state.Password == ''){
+            if( this.state.UserName == '' && this.state.UserPassword == ''){
               alert(' ID 또는 Password를 입력하세요.')
               return
             }
@@ -115,16 +115,16 @@ class DoctorLogin extends Component {
             <LoginBox>    <section>
               <form>
                 <input
-                  placeholder="ID"
-                  value={this.state.ID}
+                  placeholder="UserName"
+                  value={this.state.UserName}
                   onChange={this.handleChange}
-                  name='ID'
+                  name='UserName'
                 />
                 <input
-                  placeholder="Password"
-                  value={this.state.Password}
+                  placeholder="UserPassword"
+                  value={this.state.UserPassword}
                   onChange={this.handleChange}
-                  name='Password'
+                  name='UserPassword'
                 />
               </form> <br/>
 
@@ -133,7 +133,7 @@ class DoctorLogin extends Component {
               <b />     <hr/>
               <section>
               <p>
-                * Test Input Value Checking : <mark> {this.state.ID} {this.state.Password}
+                * Test Input Value Checking : <mark> {this.state.UserName} {this.state.UserPassword}
                                                   <br/> User_Permission : <b>{this.state.UserPermission}</b> </mark>                                                   
               </p>
               <p>
@@ -142,9 +142,6 @@ class DoctorLogin extends Component {
 
             </section>
 
-            <section>
-
-            </section>
           </article>
           
           

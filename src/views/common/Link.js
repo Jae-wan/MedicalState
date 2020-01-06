@@ -39,7 +39,7 @@ class Link extends Component {
 
                         <h1> 환자 관련 Page </h1>
                             <nav>
-
+                            <li><a href="/patientview/prescriptiondescription"> [!] 조제복약상세 [!] * 재완 *</a></li>
                             </nav>
 
                         <hr />
