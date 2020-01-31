@@ -39,7 +39,7 @@ class Link extends Component {
 
                         <h1> 환자 관련 Page </h1>
                             <nav>
-
+                            <li><a href="/patientview/prescriptiondescription"> [!] 조제복약상세 [!] * 재완 *</a></li>
                             </nav>
 
                         <hr />
@@ -48,6 +48,7 @@ class Link extends Component {
                             <nav>
                                 <li><a href="/test/qrreader"> [!] QR Reader Test Page [!] </a></li>
                                 <li><a href="/test/comparetest"> [!] Compare Test Page [!] </a></li>
+                                <li><a href="/test/Local"> [!] LocalTest [!] </a></li>
                             </nav>
                         
                     </article>

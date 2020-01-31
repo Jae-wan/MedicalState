@@ -63,22 +63,22 @@ class MedicineCompare extends Component {
             MainMedicine: [
                 {
                     name: "코푸 : ",
-                    eff: "콧물",
+                    eff: "콧물, 가래 개선",
                     MedicineNum: 1,
                 },
                 {
                     name: "타이레놀 : ",
-                    eff: "두통",
+                    eff: "두통 완화 및 고열 방지",
                     MedicineNum: 2,
                 },
                 {
-                    name: "장약 : ",
-                    eff: "설사",
+                    name: "해록신정 : ",
+                    eff: "각종 감염증 치료에 사용",
                     MedicineNum: 3,
                 },
                 {
-                    name: "테스토스테론 : ",
-                    eff: "호르몬",
+                    name: "슈다페드정 : ",
+                    eff: "코막힘을 개선시켜 주는 약",
                     MedicineNum: 4,
                 },
                 {
@@ -91,22 +91,22 @@ class MedicineCompare extends Component {
             OverMedicine: [
                 {
                     name: "코푸 : ",
-                    eff: "콧물",
+                    eff: "콧물, 가래 개선",
                     MedicineNum: 1,
                 },
                 {
                     name: "타이레놀 : ",
-                    eff: "두통",
+                    eff: "두통 완화 및 고열 방지",
                     MedicineNum: 2,
                 },
                 {
-                    name: "장약 : ",
-                    eff: "설사",
+                    name: "해록신정 : ",
+                    eff: "각종 감염증 치료에 사용",
                     MedicineNum: 3,
                 },
                 {
-                    name: "테스토스테론 : ",
-                    eff: "호르몬",
+                    name: "에이프로젠 : ",
+                    eff: "위장관 운동 조절제",
                     MedicineNum: 4,
                 },
                 {

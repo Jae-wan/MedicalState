@@ -30,11 +30,11 @@ class DoctorPrescription extends Component {
   constructor(props){
     super(props)
     this.state = {
-      patient: '',
-      sex: '',
-      age: '',
-      medicine: '',
-      medicineNumber: 0,
+      UserName: '',
+      UserSex: '',
+      UserAge: '',
+      MainMedicine: '',
+      MedicineNum: 0,
       isOpen: false,
     }
   }
@@ -47,17 +47,17 @@ class DoctorPrescription extends Component {
 
   handlePlus = () => {
     this.setState({
-      medicineNumber: this.state.medicineNumber + 1
+      MedicineNum: this.state.MedicineNum + 1
     })
   };
 
   handleMinus = () => {
-    if (this.state.medicineNumber-1 < 0 ) {
+    if (this.state.MedicineNum-1 < 0 ) {
       alert('약의 개수는 0 이상이어야 합니다.')
     }
     else {
       this.setState({
-        medicineNumber: this.state.medicineNumber - 1
+        MedicineNum: this.state.MedicineNum - 1
       })
     }
   };
@@ -85,35 +85,35 @@ class DoctorPrescription extends Component {
           <form>
             <input
               placeholder="환자 이름"
-              value={this.state.patient}
+              value={this.state.UserName}
               onChange={this.handleChange}
-              name='patient'
+              name='UserName'
             />
           </form>
           <form>
             <input
               placeholder="성별"
-              value={this.state.sex}
+              value={this.state.UserSex}
               onChange={this.handleChange}
-              name='sex'
+              name='UserSex'
             />
           </form>
           <form>
             <input
               placeholder="나이"
-              value={this.state.age}
+              value={this.state.UserAge}
               onChange={this.handleChange}
-              name='age'
+              name='UserAge'
             />
           </form>
           <br />
           <form>
             <input
               placeholder="약 이름"
-              value={this.state.medicine}
+              value={this.state.MainMedicine}
               onChange={this.handleChange}
-              name='medicine'
-            /> : {this.state.medicineNumber}
+              name='MainMedicine'
+            /> : {this.state.MedicineNum}
           </form>
 
           <button onClick={this.handlePlus}> 증가 </button>
@@ -125,13 +125,13 @@ class DoctorPrescription extends Component {
             <PopUp displayOption={displayOption}>
               <PopUpInput>
                 <section>
-                  <label> 환자 이름 : "{this.state.patient}"</label>
-                  <label> 성별 : "{this.state.sex}" </label>
-                  <label> 나이 : "{this.state.age}" </label>
+                  <label> 환자 이름 : "{this.state.UserName}"</label>
+                  <label> 성별 : "{this.state.UserSex}" </label>
+                  <label> 나이 : "{this.state.UserAge}" </label>
                   </section>
                   <hr />
                  <section>
-                  <label> 처방할 약 : "{this.state.medicine}" : {this.state.medicineNumber} 개</label>
+                  <label> 처방할 약 : "{this.state.MainMedicine}" : {this.state.MedicineNum} 개</label>
                   <br />
                   <button onClick={this.togglePopUp}> 끄기 </button>
                 </section>

@@ -246,7 +246,7 @@ class DoctorAddPatient extends Component {
 
 
       <p>이름: <div>{this.state.name}</div></p>
-
+      
       <p>전화번호: <div>{this.state.phone}</div></p>
 
       <p>성별: <div>{this.state.sex}</div></p>
