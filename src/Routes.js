@@ -12,7 +12,10 @@ import MedicineGuide from './views/DrugStoreView/MedicineGuide';
 import Information from './views/DrugStoreView/Information';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> ff1fe6c2202f9ce5791d79c350609fe9fcf2b818
 =======
 >>>>>>> ff1fe6c2202f9ce5791d79c350609fe9fcf2b818
 import QRReader from './views/TestView/QRReader';
